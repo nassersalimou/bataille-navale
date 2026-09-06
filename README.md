@@ -1,59 +1,40 @@
-# Bataille Navale en réseau
+# Bataille Navale — jeu réseau en Python (Pygame)
 
-Jeu de bataille navale multijoueur développé en Python avec Pygame et une architecture client–serveur par sockets TCP.
+Jeu de bataille navale multijoueur en Python avec interface Pygame et communication client–serveur via sockets TCP. Ce dépôt contient le code source du serveur et du client pour jouer en local ou sur un réseau local.
 
-## Fonctionnalités
+## Résumé
+- Langage : Python 3
+- UI : Pygame
+- Réseau : sockets TCP
 
-- création et connexion à une partie ;
-- placement interactif des navires ;
-- jeu à deux en temps réel ;
-- sauvegarde d'une partie ;
-- reprise après déconnexion avec un code unique ;
-- persistance locale au format JSON.
+## Prérequis
+- Python 3.8+
+- pip
 
-## Technologies
+## Installation (Windows)
+1. git clone https://github.com/nassersalimou/bataille-navale
+2. cd bataille-navale
+3. python -m venv .venv
+4. .\.venv\Scripts\Activate.ps1  (PowerShell) ou .\.venv\Scripts\activate.bat (CMD)
+5. pip install -r requirements.txt
 
-- Python 3
-- Pygame
-- sockets TCP
-- JSON
+## Installation (Linux / macOS)
+1. git clone https://github.com/nassersalimou/bataille-navale
+2. cd bataille-navale
+3. python3 -m venv .venv
+4. source .venv/bin/activate
+5. pip install -r requirements.txt
 
-## Installation
+## Lancer une partie locale
+- Démarrez le serveur (voir la structure du projet pour la commande exacte).
+- Lancez deux instances du client (même machine ou machines du LAN) et suivez l'interface Pygame pour placer les navires et jouer.
 
-```bash
-python -m venv .venv
-```
+## Résultat attendu
+- Fenêtres clients affichant les grilles, connexions établies, attaques et états visibles.
 
-Sous Windows :
+## Sécurité
+- Les fichiers de sauvegarde sont stockés localement en JSON : ne publiez pas ces fichiers si vous ne voulez pas exposer des données locales.
+- Le serveur écoute par défaut sur localhost. Ne l'exposez pas sur Internet sans audit.
 
-```powershell
-.venv\Scripts\activate
-pip install -r requirements.txt
-python bataille_navale/main.py
-```
-
-Sous Linux ou macOS :
-
-```bash
-source .venv/bin/activate
-pip install -r requirements.txt
-python bataille_navale/main.py
-```
-
-Le serveur écoute par défaut sur `127.0.0.1`. Lancez ensuite deux clients pour tester une partie locale.
-
-## Structure
-
-```text
-bataille_navale/
-├── client/       Interface Pygame et client réseau
-├── server/       Serveur, parties et persistance
-├── main.py       Point d'entrée
-├── protocole.py  Protocole d'échange
-├── grille.py     Gestion des grilles
-└── navire.py     Modèle des navires
-```
-
-## Auteurs
-
-Projet universitaire réalisé par Nasser Salimou et Safwan Msellek.
+## Licence
+- Licence MIT — voir LICENSE
