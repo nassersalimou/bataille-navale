@@ -252,8 +252,9 @@ class EcranPartie:
             f"Votre flotte — {self.pseudo_joueur}", True, (150, 220, 255))
         s2 = self._police_label.render(
             f"Flotte ennemie — {self.pseudo_adverse}", True, (255, 160, 100))
-        self.fenetre.blit(s1, (self.grille_propre.x, 80))
-        self.fenetre.blit(s2, (self.grille_ennemie.x, 80))
+        # y = 58 : au-dessus des lettres A-J (dessinées à grille.y - 20)
+        self.fenetre.blit(s1, (self.grille_propre.x, 58))
+        self.fenetre.blit(s2, (self.grille_ennemie.x, 58))
 
         # Étiquettes
         police_etiq = pygame.font.SysFont("segoeui", 13)

@@ -67,13 +67,13 @@ class EcranConnexion:
         w = self.fenetre.get_width()
         police_label = pygame.font.SysFont("segoeui", 18)
 
-        def label(texte, y):
+        def label(texte, y, x=w // 2 - 180):
             s = police_label.render(texte, True, (180, 200, 240))
-            self.fenetre.blit(s, (w // 2 - 180, y))
+            self.fenetre.blit(s, (x, y))
 
         label("Pseudo :", 288)
         label("Adresse IP du serveur :", 368)
-        label("Port :", 368)
+        label("Port :", 368, x=w // 2 + 90)   # aligné sur le champ port
 
         self.champ_pseudo.afficher(self.fenetre)
         self.champ_ip.afficher(self.fenetre)
