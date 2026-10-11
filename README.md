@@ -148,4 +148,4 @@ bataille_navale/
 
 ## Licence
 
-Licence MIT.
+Licence MIT — voir [LICENSE](LICENSE).
